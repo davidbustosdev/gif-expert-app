@@ -7,7 +7,7 @@ export const GifApp = () => {
 
   return (
     <>
-      <h1>Gif-App</h1>
+      <h1>Random Gif App</h1>
       <GifInput categories={categories} setCategories={setCategories} />
 
       <ol>

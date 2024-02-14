@@ -1,21 +1,23 @@
-* {
+html {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(234, 234, 234);
-}
-
-body {
-  padding: 60px;
-}
-
-input {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(97, 32, 158);
-  color: black;
-  font-size: 1.2rem;
-  outline: none;
-  padding: 10px 15px;
+background-color: rgba(3, 0, 0, 0.945);  
+top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
   width: 100%;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+h1{
+  font-size: 3rem;
+  color: #fff;
 }
 
 h2 {
@@ -61,3 +63,85 @@ h3 {
 .card img {
   width: 100%;
 }
+
+button {
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+  border-radius: 20px;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 17px;
+  padding: 0.6em 1.5em;
+ }
+ 
+ button:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+ }
+ 
+ @keyframes pulse512 {
+  0% {
+   box-shadow: 0 0 0 0 #05bada66;
+  }
+ 
+  70% {
+   box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+ 
+  100% {
+   box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+ }
+
+ .form {
+  --width-of-input: 400px;
+  --border-height: 1px;
+  --border-before-color: rgba(221, 221, 221, 0.39);
+  --border-after-color: #5891ff;
+  --input-hovered-color: #4985e01f;
+  position: relative;
+  width: var(--width-of-input);
+ }
+ /* styling of Input */
+ .input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+ }
+ /* styling of animated border */
+ .input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+ }
+ /* Hover on Input */
+ input:hover {
+  background: var(--input-hovered-color);
+ }
+ 
+ input:focus {
+  outline: none;
+ }
+ /* here is code of animated border */
+ input:focus ~ .input-border {
+  width: 100%;
+ }
+ /* === if you want to do animated border on typing === */
+ /* remove input:focus code and uncomment below code */
+ /* input:valid ~ .input-border{
+   width: 100%;
+ } */
+
